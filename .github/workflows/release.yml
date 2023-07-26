@@ -14,18 +14,18 @@ jobs:
 
       - name: Build
         run: |
-          zip -v menu_icons.zip README.md **/*.svg **/*.png
-          zip -v menu_icons_PNG.zip README.md **/*.png
-          zip -v menu_icons_SVG.zip README.md **/*.svg
+          zip -v menu_icons_all.zip README.md **/*.(svg|png)
+          zip -v allergen_icons.zip README.md allergens/*.(svg|png) allergens_sub/*.(svg|png)
+          zip -v custom_tag_icons.zip README.md custom_tags/*.(svg|png)
 
       - name: Archive
         uses: actions/upload-artifact@v3
         with:
           name: Bundles
           path: |
-            menu_icons.zip
-            menu_icons_PNG.zip
-            menu_icons_SVG.zip
+            menu_icons_all.zip
+            allergen_icons.zip
+            custom_tag_icons.zip
 
       - name: Release
         uses: softprops/action-gh-release@v1
@@ -47,7 +47,7 @@ jobs:
             documentation in your products. We'd love attribution in your app's about screen, and
             please not re-sell these icons.
           files: |
-            menu_icons.zip
-            menu_icons_PNG.zip
-            menu_icons_SVG.zip
+            menu_icons_all.zip
+            allergen_icons.zip
+            custom_tag_icons.zip
           draft: true
