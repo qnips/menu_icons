@@ -28,7 +28,7 @@ jobs:
             custom_tag_icons.zip
 
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           name: MENU ICONS for Foodservice and Catering (Version ${{ github.ref_name }})
           body: |
