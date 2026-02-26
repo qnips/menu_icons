@@ -19,7 +19,7 @@ jobs:
           zip -v custom_tag_icons.zip README.md custom_tags/*.{svg,png}
 
       - name: Archive
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: Bundles
           path: |
